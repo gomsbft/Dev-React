@@ -3,21 +3,28 @@ import './App.css';
 import { useState } from 'react';
 import ImgsComponent from './components/ImgsComponent';
 import ClickOneComponent from './components/ClickOneComponent';
+import Calculater from './components/Calculater';
 
 
 function App() {
 
-  const [total, setTotal] = useState(0)
+  const [total, setTotal] = useState("0")
 
-  function clickNum() {
-    setTotal((prev) => prev + 1)
+  function changeNum(num) {
+    setTotal()
   }
+
+  function reset() {
+    setTotal("0")
+  }
+
+
 
   return (
     <>
-      <h1>Total Count : {total}</h1>
-      <ClickOneComponent getNum={clickNum}/>
-      <ClickOneComponent getNum={clickNum}/>
+      <h1>{total}</h1>
+      <Calculater getNum={changeNum}/>
+      <button onClick={reset}>리셋</button>
     </>
   );
 }
