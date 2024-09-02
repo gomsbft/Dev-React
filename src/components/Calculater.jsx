@@ -7,7 +7,7 @@ const Calculater = (props) => {
   const {getNum} = props
 
   function pushNum(e) {
-    getNum()
+    getNum(e.target.value)
   }
 
   return (
