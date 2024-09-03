@@ -1,14 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
-import UseRefComponent from './components/UseRefComponent';
+import UseMemosComponent from './components/UseMemosComponent';
 
 
 function App() {
 
   return (
     <>
-      <UseRefComponent />
+      <UseMemosComponent />
     </>
   );
 }
