@@ -1,14 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
-import Operations from './components/Operations';
+import UseRefComponent from './components/UseRefComponent';
 
 
 function App() {
 
   return (
     <>
-      <Operations />
+      <UseRefComponent />
     </>
   );
 }

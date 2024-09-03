@@ -1,7 +1,11 @@
+// 전역변수
 $primary-color: black;
 
 .container {
+  // 지역변수
   $primary-color: red !global;
+  // !global 변수의 유효범위를 전역으로 설정
+  // !difault 같은 이름의 변수가 원래 있으면 현재 설정하는 지역변수를 무시
   background-color: $primary-color;
 };
 
