@@ -1,13 +1,14 @@
 import './App.css';
-import { useState } from 'react';
-import UseMemosComponent from './components/UseMemosComponent';
+import { useCallback, useState } from 'react';
 
 
 function App() {
 
+  const [user, setUser] = useState("")
+
   return (
     <>
-      <UseMemosComponent />
+      
     </>
   );
 }
