@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from './context';
 
-const FooterComponent = () => {
-
+const MainComponent = () => {
   const {darkMode} = useContext(ThemeContext);
 
   const theme = {
@@ -11,10 +10,10 @@ const FooterComponent = () => {
   }
 
   return (
-    <div className='footer' style={theme}>
-      footer부분
+    <div className='main' style={theme}>
+      메인부분
     </div>
   );
 };
 
-export default FooterComponent;
+export default MainComponent;

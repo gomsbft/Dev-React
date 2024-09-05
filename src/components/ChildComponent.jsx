@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { MyContext } from './context'
 
-const ChildComponent = ({children}) => {
-  return (
-    <div>
-      children 값은 {children} 입니다.
-    </div>
-  );
+const ChildComponent = () => {
+
+  const value = useContext(MyContext);
+
+  return <div> 전달 받은 데이터: {value} </div>;
 };
 
 export default ChildComponent;

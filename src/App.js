@@ -1,14 +1,20 @@
 import './App.css';
-import { useCallback, useState } from 'react';
+import { createContext, useCallback, useContext, useState } from 'react';
+import { AllColor } from './components/context';
+import HomeComponent from './components/HomeComponent';
+import ColorProviderComponent from './components/ColorProviderComponent';
+
+// const MyContext = createContext();
 
 
 function App() {
 
-  const [user, setUser] = useState("")
 
-  return (
+return (
     <>
-      
+      <AllColor.Provider>
+        <ColorProviderComponent />
+      </AllColor.Provider>
     </>
   );
 }
