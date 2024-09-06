@@ -5,6 +5,8 @@ import ColorProviderComponent from './components/ColorProviderComponent';
 import Counter from './features/counter/Counter';
 import SeverComponent from './components/SeverComponent';
 import TodoFetchingComponent from './components/TodoFetchingComponent';
+import TodoTitieComponent from './components/TodoTitieComponent';
+import TodoUserComponent from './components/TodoUserComponent';
 
 // const MyContext = createContext();
 
@@ -14,7 +16,7 @@ function App() {
 
 return (
     <>
-      <TodoFetchingComponent />
+      <TodoUserComponent />
     </>
   );
 }

@@ -2,26 +2,24 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { PacmanLoader } from 'react-spinners';
 
-
 const fetchTodo = () => {
-  return fetch("https://jsonplaceholder.typicode.com/todos/1")
+  return fetch("https://jsonplaceholder.typicode.com/todos")
   .then(
     (response) => response.json()
   )
 }
 
+const TodoTitieComponent = () => {
 
-const TodoFetchingComponent = () => {
-
-  const { data, error, isLoading} = useQuery({
+  const {data, error, isLoading} = useQuery({
     queryKey: ["todos"],
     queryFn: fetchTodo
-  });
+  })
 
   if(isLoading) {
     return(
       <div className='spinner-container'>
-        <PacmanLoader color="#ff00c8" size={30} />
+        <PacmanLoader color='blue' size={30} />
       {/* <div className='spinner'></div>; */}
       </div>
     
@@ -30,13 +28,16 @@ const TodoFetchingComponent = () => {
 
   if(error) return <div>An error occurred: {error.message}</div>
 
+  
 
   return (
-    <div className='wrap'>
-      <h3>Todo: {data.title}</h3>
-      <p>Status: {data.completed ? "Completed" : "Not completed"}</p>
+    <div>
+      <h3>이번주 할 일 리스트</h3>
+      <ul>
+        { data.map((todo) => (<li key={todo.id}><input type='checkbox' />{todo.title}</li>))}
+      </ul>
     </div>
   );
 };
 
-export default TodoFetchingComponent;
+export default TodoTitieComponent;

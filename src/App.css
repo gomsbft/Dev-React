@@ -56,7 +56,19 @@
   border-radius: 10px;
 }
 
+.spinner-container {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .spinner {
+
+
   border: 4px solid rgba( 0, 0, 0, 0.1);
   border-left-color: #09f;
   border-radius: 50%;
