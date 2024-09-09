@@ -1,22 +1,37 @@
 import './App.css';
-import { createContext, useCallback, useContext, useState } from 'react';
-import { AllColor } from './components/context';
-import ColorProviderComponent from './components/ColorProviderComponent';
-import Counter from './features/counter/Counter';
-import SeverComponent from './components/SeverComponent';
-import TodoFetchingComponent from './components/TodoFetchingComponent';
-import TodoTitieComponent from './components/TodoTitieComponent';
-import TodoUserComponent from './components/TodoUserComponent';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import NotFound from './components/NotFound';
+import Product from './components/Product';
+import Home from './components/Home';
+import Root from './components/Root';
+import ProductInfo from './components/ProductInfo';
 
 // const MyContext = createContext();
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <NotFound />,
+    children: [
+      { index: true, element: <Home />},
+      { path: "/product", element: <Product />},
+      { path: "/product/:productId", element: <ProductInfo />}
+    ]
+  },
+  {
+    path: "/product",
+    element: <Product />,
+    errorElement: <NotFound />
+  }
+]);
 
 
 function App() {
 
-
 return (
     <>
-      <TodoUserComponent />
+      <RouterProvider router={router} />
     </>
   );
 }

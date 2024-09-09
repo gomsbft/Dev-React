@@ -83,3 +83,37 @@
   }
 }
 
+.allWrap {
+
+}
+
+.itemUl {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.itemWrap {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 200px;
+  height: 250px;
+  margin: 20px;
+}
+
+.itemP {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+}
+
+.itemWrap button {
+
+  border-radius: 3px;
+
+}
